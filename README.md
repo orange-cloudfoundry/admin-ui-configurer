@@ -4,7 +4,7 @@ Wrap [admin-ui](https://github.com/cloudfoundry-incubator/admin-ui) to make it r
 
 ## Deploy
 
-1. Download latest `admin-ui-configurer-bundled.zip` in [release page](/releases)
+1. Download latest `admin-ui-configurer-bundled.zip` in [release page](https://github.com/orange-cloudfoundry/admin-ui-configurer/releases)
 2. Create a mysql service on your cloud foundry where you want to deploy the app (e.g.: `cf cs p-mysql 100mb admin-ui-mysql`)
 3. Create an uaa client for your admin-ui, e.g.:
 ```
