@@ -1,0 +1,6 @@
+name: admin-ui
+command: ./admin-ui-configurer
+buildpack: ruby_buildpack
+#services:
+#- admin-ui-config
+#- admin-ui-mysql

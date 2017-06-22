@@ -1,0 +1,20 @@
+language: go
+go:
+- 1.8.x
+before_install:
+- rvm install 2.3.3
+- rvm use 2.3.3
+- gem install bundler --no-rdoc --no-ri
+script:
+- echo "no test"
+after_success:
+- go build
+- git clone https://github.com/cloudfoundry-incubator/admin-ui.git
+- export OLD_PWD=`pwd`
+- cd admin-ui
+- bundle install
+- bundle package --all
+- cd $OLD_PWD
+- mv ./admin-ui-configurer admin-ui/admin-ui-configurer
+- cp ./manifest.yml admin-ui
+- zip -r admin-ui-configurer.zip ./admin-ui/*
