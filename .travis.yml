@@ -18,7 +18,7 @@ after_success:
 - cp "$PATH_BUILD/manifest.yml" admin-ui
 - cp "$PATH_BUILD/.cfignore" admin-ui
 - cp "$PATH_BUILD/config.json" admin-ui
-- zip -r admin-ui-configurer.zip ./admin-ui/* .*
+- zip -r admin-ui-configurer.zip ./admin-ui/* ./admin-ui/.*
 deploy:
   provider: releases
   api_key:
