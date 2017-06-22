@@ -1,0 +1,11 @@
+{
+  "ccdb_uri": "postgres://ccadmin:ccadmin@10.0.0.2:5524/ccdb",
+  "cloud_controller_uri": "https://api.system.domain.of.my.cf.com",
+  "mbus": "nats://nats:nats@10.0.0.3:4222",
+  "uaadb_uri": "postgres://uaaadmin:uaaadmin@10.0.0.4:5524/uaadb",
+  "uaa_groups_admin": ["admin_ui.admin","cloud_controller.admin"],
+  "uaa_groups_user": ["admin_ui.user","cloud_controller.admin"],
+  "uaa_client": {"id": "admin_ui_client", "secret": "myclientsecret"},
+  "monitored_components": ["NATS","CloudController","Diego","HealthManager","Router","-Provisioner","ALL"],
+  "sender_email": {"server": "10.10.10.10","account": "system@10.10.10.10"}
+}
