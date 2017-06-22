@@ -18,12 +18,12 @@ after_success:
 - cp "$PATH_BUILD/manifest.yml" admin-ui
 - cp "$PATH_BUILD/.cfignore" admin-ui
 - cp "$PATH_BUILD/config.json" admin-ui
-- zip -r admin-ui-configurer.zip ./admin-ui/* ./admin-ui/.*
+- zip -r admin-ui-configurer-bundled.zip ./admin-ui/* ./admin-ui/.*
 deploy:
   provider: releases
   api_key:
     secure: ot985u+ARokdFHg7XW/mL5PsTsqe5/2nJ4SRwm94+aNybFbngPYUk1Tax+sXL6dU0i+5GTYH215rYTOp9hNvM0TeruHo5pvKQ9QTYxpsK4wNEvbA3NKEHt5T/tG1oey3E7m0netw03xTi7cv83EqEp3O/9/xiinxzeLvH97L7op2ZTCmuwRwpdKOgGxjeJwNgmtS3FQsk8zwKtRP4JDVL1Y5Qgrdz2joH6VE05k/CP7qq/Y39klRgI5raKhxbrA1pY989ha62mE88VmrkHgeWVfeYAkEDLb7DRIPLvGntk3qrlVzYF2wo0/1eo69FoHmcQLq+TD12vkTA+QT0+kyXhHQZVJU5TC0ZpyPOYsXjF3hBSX7nFCZRySBmF3196bcltF2Vm/wfVagszLitYzicMTnhrxenHkUoyLjJ6cmt6h3GLrue3ANdtFCH038wSQqRT3b7iBfr6VxQSV4rEGFRdhZDp6pDOuINA6Fke/0py7e8M+7bCvTu9WWfph0skWgL6WLckWwVmlU7oEaOo3qxctAvZpe3dGLMB5VWxagHoFyb3OHSyxtz2+ZzoVeZwFPq+Bpd8wXjgbNh+aQuChnj4jaBQEep28tAzpyTRl4xWvaggGYdDtNVW+6V82bTuKP+bEwPNf4me80Weu7qLuIn4piadXT+Fefl08lk9xWgJg=
-  file: admin-ui-configurer.zip
+  file: admin-ui-configurer-bundled.zip
   on:
     tags: true
     all_branches: true
