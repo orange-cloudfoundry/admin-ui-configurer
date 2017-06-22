@@ -14,11 +14,11 @@ after_success:
 - bundle install
 - bundle package --all
 - cd ../
-- mv "$PATH_BUILD/admin-ui-configurer" admin-ui/admin-ui-configurer
-- cp "$PATH_BUILD/manifest.yml" admin-ui
-- cp "$PATH_BUILD/.cfignore" admin-ui
-- cp "$PATH_BUILD/config.json" admin-ui
-- zip -r admin-ui-configurer-bundled.zip ./admin-ui/* ./admin-ui/.*
+- mv admin-ui-configurer admin-ui/admin-ui-configurer
+- cp manifest.yml admin-ui/
+- cp .cfignore admin-ui/
+- cp config.json admin-ui/
+- zip -r admin-ui-configurer-bundled.zip ./admin-ui/* ./admin-ui/.cfignore
 deploy:
   provider: releases
   api_key:
