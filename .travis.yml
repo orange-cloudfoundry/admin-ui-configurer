@@ -9,14 +9,14 @@ script:
 - echo "no test"
 after_success:
 - go build
+- export PATH_BUILD=`pwd`
+- cd $HOME
 - git clone https://github.com/cloudfoundry-incubator/admin-ui.git
-- export OLD_PWD=`pwd`
 - cd admin-ui
 - bundle install
 - bundle package --all
-- cd $OLD_PWD
-- mv ./admin-ui-configurer admin-ui/admin-ui-configurer
-- cp ./manifest.yml admin-ui
+- mv "$PATH_BUILD/admin-ui-configurer" admin-ui/admin-ui-configurer
+- cp "$PATH_BUILD/manifest.yml" admin-ui
 - zip -r admin-ui-configurer.zip ./admin-ui/*
 deploy:
   provider: releases
